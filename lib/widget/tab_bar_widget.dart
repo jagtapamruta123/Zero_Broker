@@ -184,8 +184,10 @@ class TabViewSecondCardItem extends StatelessWidget {
 
 class TabBarSecondCardWidget extends StatelessWidget {
   final Function onTapPayRent;
+  final Function onTapRentalAgreement;
   const TabBarSecondCardWidget({
     @required this.onTapPayRent,
+    @required this.onTapRentalAgreement,
     Key key,
   }) : super(key: key);
 
@@ -228,7 +230,7 @@ class TabBarSecondCardWidget extends StatelessWidget {
                 ),
                 VerticalDivider(),
                 TabViewSecondCardItem(
-                  onTap: null,
+                  onTap: onTapRentalAgreement,
                   hoverMsg: 'lowest price',
                   icon: Icon(
                     Icons.car_rental,

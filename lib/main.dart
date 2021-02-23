@@ -1,5 +1,6 @@
 import 'package:demo/pages/home_page.dart';
 import 'package:demo/pages/pay_rent_page.dart';
+import 'package:demo/pages/rental_agreement_page.dart';
 import 'package:demo/pages/search_localities_page.dart';
 import 'package:demo/services/call_msg_service.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         MyHomePage.id: (context) => MyHomePage(),
         SearchLocalities.id: (context) => SearchLocalities(),
         PayRent.id: (context) => PayRent(),
+        RentalAgreementPage.id: (context) => RentalAgreementPage(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,

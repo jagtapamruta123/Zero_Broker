@@ -1,5 +1,6 @@
 import 'package:demo/drawer_screen.dart';
 import 'package:demo/pages/pay_rent_page.dart';
+import 'package:demo/pages/rental_agreement_page.dart';
 import 'package:demo/pages/search_localities_page.dart';
 import 'package:demo/services/call_msg_service.dart';
 import 'package:demo/widget/custom_text_widget.dart';
@@ -91,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage>
             )
           ],
         ),
+
         actions: [
           CircleAvatar(
             radius: 12,
@@ -237,6 +239,10 @@ class _MyHomePageState extends State<MyHomePage>
                               onTapToCall: () => {_service.call(number)},
                               onTapCardItemPayRent: () {
                                 Navigator.pushNamed(context, PayRent.id);
+                              },
+                              onTapCardItemRentalAgreement: () {
+                                Navigator.pushNamed(
+                                    context, RentalAgreementPage.id);
                               },
                             ),
 

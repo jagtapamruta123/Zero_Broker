@@ -6,11 +6,13 @@ class TabViewPageOneWidget extends StatelessWidget {
   final Function onTapToCall;
   final Function onTapSearch;
   final onTapCardItemPayRent;
+  final onTapCardItemRentalAgreement;
 
   TabViewPageOneWidget({
-    this.onTapToCall,
-    this.onTapSearch,
-    this.onTapCardItemPayRent,
+    @required this.onTapToCall,
+    @required this.onTapSearch,
+    @required this.onTapCardItemPayRent,
+    @required this.onTapCardItemRentalAgreement,
     Key key,
   }) : super(key: key);
 
@@ -106,6 +108,7 @@ class TabViewPageOneWidget extends StatelessWidget {
             ),
           ),
         ),
+        //Card item to press
         Card(
           elevation: 3,
           child: Container(
@@ -114,6 +117,7 @@ class TabViewPageOneWidget extends StatelessWidget {
             margin: EdgeInsets.fromLTRB(20, 5, 0, 0),
             child: TabBarSecondCardWidget(
               onTapPayRent: onTapCardItemPayRent,
+              onTapRentalAgreement: onTapCardItemRentalAgreement,
             ),
           ),
         ),
