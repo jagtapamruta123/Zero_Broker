@@ -47,11 +47,13 @@ class TabSearchBarWidget extends StatelessWidget {
   Function function;
   Icon iconSearch;
   Widget iconSuffix;
+  InputBorder enableBorder;
   TabSearchBarWidget({
     @required this.hintText,
     @required this.function,
     this.iconSearch,
     this.iconSuffix,
+    this.enableBorder,
     Key key,
   }) : super(key: key);
 
@@ -60,7 +62,7 @@ class TabSearchBarWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
       child: Container(
-        height: 48,
+        height: 40,
         child: TextField(
           readOnly: true,
           onTap: function,
@@ -71,14 +73,17 @@ class TabSearchBarWidget extends StatelessWidget {
             color: Colors.black,
           ),
           decoration: InputDecoration(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+            filled: true,
+            fillColor: Colors.white,
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+              ),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            enabledBorder: enableBorder,
             prefixIcon: iconSearch,
             suffixIcon: iconSuffix,
-            // Icon(
-            //   Icons.search,
-            //   color: Colors.grey,
-            //   size: 20,
-            // ),
             hintText: hintText,
             hintStyle: TextStyle(
               fontSize: 14,
@@ -92,8 +97,10 @@ class TabSearchBarWidget extends StatelessWidget {
 }
 
 //TabView Card Text with icons
+//used in rental agreement page card item
 class CardTextWidget extends StatelessWidget {
   String line;
+
   CardTextWidget({
     @required this.line,
     Key key,
@@ -139,44 +146,47 @@ class TabViewSecondCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.only(left: 10),
-            decoration: BoxDecoration(
-              color: Colors.orange,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(1.0),
-              child: Text(
-                hoverMsg,
-                style: TextStyle(fontSize: 8),
+      child: Container(
+        color: Colors.transparent,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              decoration: BoxDecoration(
+                color: Colors.orange,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(3, 0, 3, 0),
+                child: Text(
+                  hoverMsg,
+                  style: TextStyle(fontSize: 8),
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 1,
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 10),
-            child: icon,
-          ),
-          SizedBox(
-            height: 1,
-          ),
-          Text(
-            title,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 10,
+            SizedBox(
+              height: 1,
             ),
-          )
-        ],
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: icon,
+            ),
+            SizedBox(
+              height: 1,
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 10,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -185,9 +195,15 @@ class TabViewSecondCardItem extends StatelessWidget {
 class TabBarSecondCardWidget extends StatelessWidget {
   final Function onTapPayRent;
   final Function onTapRentalAgreement;
+  final Function onTapClickEarn;
+  final Function onTapMoversAndPackers;
+  final Function onTapHomeServices;
   const TabBarSecondCardWidget({
     @required this.onTapPayRent,
+    @required this.onTapClickEarn,
     @required this.onTapRentalAgreement,
+    @required this.onTapMoversAndPackers,
+    @required this.onTapHomeServices,
     Key key,
   }) : super(key: key);
 
@@ -210,7 +226,7 @@ class TabBarSecondCardWidget extends StatelessWidget {
                     size: 40,
                   ),
                   title: 'movers n packers',
-                  onTap: null,
+                  onTap: onTapMoversAndPackers,
                 ),
                 VerticalDivider(),
                 SizedBox(
@@ -253,7 +269,7 @@ class TabBarSecondCardWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TabViewSecondCardItem(
-                  onTap: null,
+                  onTap: onTapClickEarn,
                   hoverMsg: 'lowest price',
                   icon: Icon(
                     Icons.car_rental,
@@ -269,7 +285,7 @@ class TabBarSecondCardWidget extends StatelessWidget {
                   width: 19,
                 ),
                 TabViewSecondCardItem(
-                  onTap: null,
+                  onTap: onTapHomeServices,
                   hoverMsg: 'lowest price',
                   icon: Icon(
                     Icons.home_outlined,

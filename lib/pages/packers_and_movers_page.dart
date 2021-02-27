@@ -1,40 +1,44 @@
 import 'package:demo/model/bottom_sheet_model.dart';
-
 import 'package:demo/pages/rental_agreement_bottom_navigation_bar_pages/book_now_home_page.dart';
 import 'package:demo/pages/rental_agreement_bottom_navigation_bar_pages/booking.dart';
 import 'package:demo/pages/rental_agreement_bottom_navigation_bar_pages/home_page.dart';
 import 'package:demo/pages/rental_agreement_bottom_navigation_bar_pages/support.dart';
 
+import 'package:demo/services/call_msg_service.dart';
+import 'package:demo/widget/custom_text_widget.dart';
+import 'package:demo/widget/flat_button_widget.dart';
+import 'package:demo/widget/pay_rent_house_tab_widget.dart';
+import 'package:demo/widget/tab_bar_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-class RentalAgreementPage extends StatefulWidget {
-  static String id = 'rental_agreemet';
-  bool isBookNow;
-  RentalAgreementPage({this.isBookNow});
+import 'movers_and_packers_navigation_bar/movers_and_packers_home_page.dart';
+
+class PackersAnsMoversPage extends StatefulWidget {
+  static String id = 'packers_and_movers';
+
+  // PackersAnsMoversPage();
 
   @override
-  _RentalAgreementPageState createState() => _RentalAgreementPageState();
+  _PackersAnsMoversPageState createState() => _PackersAnsMoversPageState();
 }
 
-class _RentalAgreementPageState extends State<RentalAgreementPage> {
+class _PackersAnsMoversPageState extends State<PackersAnsMoversPage> {
   int _currentIndex = 0;
   // bool isBookNowState = widget.isBookNow;
 
   @override
   void initState() {
-    //  isBookNowState = widget.isBookNow;
-
     // TODO: implement initState
     super.initState();
   }
 
   List<Widget> _tabs = [
-    Visibility(
-      visible: false,
-      replacement: NavHomePage(),
-      child: BookNowPage(),
-    ),
+    MPHomePage(),
     NavBookingPage(),
     NavSupportPage(),
   ];
@@ -59,7 +63,7 @@ class _RentalAgreementPageState extends State<RentalAgreementPage> {
               backgroundColor: Colors.pink[400],
             ),
             SizedBox(
-              width: 7,
+              width: 5,
             ),
             RichText(
               // locale: ,
@@ -69,22 +73,22 @@ class _RentalAgreementPageState extends State<RentalAgreementPage> {
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                     color: Colors.black,
-                    letterSpacing: 0.5),
+                    letterSpacing: 0.2),
                 children: [
                   TextSpan(
                     text: ' Broker',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
-                        letterSpacing: 0.5,
+                        letterSpacing: 0.2,
                         color: Colors.black),
                   ),
                   TextSpan(
-                    text: '  (legal services)',
+                    text: ' (Movers and Packers)',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 8,
-                        letterSpacing: 0.5,
+                        letterSpacing: 0.2,
                         color: Colors.black),
                   ),
                 ],

@@ -1,44 +1,31 @@
+//import 'dart:js';
+
 import 'package:demo/model/bottom_sheet_model.dart';
-
-import 'package:demo/pages/rental_agreement_bottom_navigation_bar_pages/book_now_home_page.dart';
-import 'package:demo/pages/rental_agreement_bottom_navigation_bar_pages/booking.dart';
-import 'package:demo/pages/rental_agreement_bottom_navigation_bar_pages/home_page.dart';
 import 'package:demo/pages/rental_agreement_bottom_navigation_bar_pages/support.dart';
-
-import 'package:flutter/cupertino.dart';
+import 'package:demo/pages/rental_agreement_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class RentalAgreementPage extends StatefulWidget {
-  static String id = 'rental_agreemet';
-  bool isBookNow;
-  RentalAgreementPage({this.isBookNow});
+import 'home_service_bottom_navigation/home_service_home_page.dart';
+import 'rental_agreement_bottom_navigation_bar_pages/booking.dart';
+
+class HomeServicePage extends StatefulWidget {
+  static String id = 'home_services';
 
   @override
-  _RentalAgreementPageState createState() => _RentalAgreementPageState();
+  _HomeServicePageState createState() => _HomeServicePageState();
 }
 
-class _RentalAgreementPageState extends State<RentalAgreementPage> {
+class _HomeServicePageState extends State<HomeServicePage> {
   int _currentIndex = 0;
-  // bool isBookNowState = widget.isBookNow;
-
-  @override
-  void initState() {
-    //  isBookNowState = widget.isBookNow;
-
-    // TODO: implement initState
-    super.initState();
-  }
-
   List<Widget> _tabs = [
     Visibility(
-      visible: false,
-      replacement: NavHomePage(),
-      child: BookNowPage(),
+      visible: true, child: HomeserviceHomePage(),
+      // BookNowPage(),
     ),
     NavBookingPage(),
     NavSupportPage(),
   ];
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -80,7 +67,7 @@ class _RentalAgreementPageState extends State<RentalAgreementPage> {
                         color: Colors.black),
                   ),
                   TextSpan(
-                    text: '  (legal services)',
+                    text: '  (Home services)',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 8,
@@ -132,54 +119,6 @@ class _RentalAgreementPageState extends State<RentalAgreementPage> {
               backgroundColor: destination.color,
               title: Text(destination.title));
         }).toList(),
-      ),
-    );
-  }
-}
-
-class PressToCallRentalAgreementPage extends StatelessWidget {
-  PressToCallRentalAgreementPage({
-    Key key,
-    @required this.mobileNumber,
-    @required this.onTap,
-  }) : super(key: key);
-
-  final String mobileNumber;
-  final Function onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: 30,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(3),
-          border: Border.all(
-            color: Colors.pink,
-          ),
-        ),
-        margin: EdgeInsets.fromLTRB(5, 18, 10, 0),
-        child: Padding(
-          padding: const EdgeInsets.all(6.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Icon(
-                Icons.phone,
-                size: 15,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                mobileNumber,
-                style: TextStyle(fontSize: 10),
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }

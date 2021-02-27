@@ -1,4 +1,5 @@
 import 'package:demo/services/range_slider_data.dart';
+import 'package:demo/widget/bottom_navigation__buton.dart';
 import 'package:demo/widget/custom_text_widget.dart';
 import 'package:demo/widget/tab_bar_widget.dart';
 import 'package:flutter/material.dart';
@@ -131,11 +132,8 @@ class _SearchLocalitiesState extends State<SearchLocalities> {
             ],
           ),
         ),
-        bottomNavigationBar: Container(
-          height: 50,
-          decoration: BoxDecoration(color: Colors.blue),
-          child: Center(child: Text('Search')),
-          width: double.infinity,
+        bottomNavigationBar: NavigationButtonWidget(
+          title: 'Search',
         ),
         body: SingleChildScrollView(
           child: Container(

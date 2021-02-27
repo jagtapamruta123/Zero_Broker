@@ -52,12 +52,7 @@ class QuestionAnsExpandedWidget extends StatelessWidget {
                           ),
                         ],
                       )),
-                  // collapsed: Text(
-                  //   'loremIpsum',
-                  //   softWrap: true,
-                  //   maxLines: 2,
-                  //   overflow: TextOverflow.ellipsis,
-                  // ),
+
                   expanded:
                       //Column(
                       // crossAxisAlignment: CrossAxisAlignment.start,

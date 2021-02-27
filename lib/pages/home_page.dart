@@ -1,4 +1,7 @@
 import 'package:demo/drawer_screen.dart';
+import 'package:demo/pages/click_and_earn.dart';
+import 'package:demo/pages/home_services_page.dart';
+import 'package:demo/pages/packers_and_movers_page.dart';
 import 'package:demo/pages/pay_rent_page.dart';
 import 'package:demo/pages/rental_agreement_page.dart';
 import 'package:demo/pages/search_localities_page.dart';
@@ -34,8 +37,6 @@ class _MyHomePageState extends State<MyHomePage>
     // TODO: implement initState
     super.initState();
   }
-
-  void _onTapSearch() {}
 
   @override
   void dispose() {
@@ -143,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage>
                       Padding(
                         padding: const EdgeInsets.fromLTRB(45, 0, 0, 0),
                         child: Text(
-                          'World\'s Largest No Brokerage ',
+                          'World\'s Largest Zero Brokerage ',
                           style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
@@ -201,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage>
                                 width: 0.8,
                               ),
                               Text(
-                                'NoBroker Real Estate Report 2020!',
+                                'Zero Broker Real Estate Report 2020!',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 8,
@@ -232,6 +233,17 @@ class _MyHomePageState extends State<MyHomePage>
                           children: [
                             //=======================tab1=============================
                             TabViewPageOneWidget(
+                              onTapCardItemHomeServices: () {
+                                Navigator.pushNamed(
+                                    context, HomeServicePage.id);
+                              },
+                              onTapCardItemClickEarn: () {
+                                Navigator.pushNamed(context, ClickAndEarn.id);
+                              },
+                              onTapCardItemMoversAndPackers: () {
+                                Navigator.pushNamed(
+                                    context, PackersAnsMoversPage.id);
+                              },
                               onTapSearch: () {
                                 Navigator.pushNamed(
                                     context, SearchLocalities.id);

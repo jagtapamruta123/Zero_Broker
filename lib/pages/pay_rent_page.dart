@@ -6,9 +6,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/widget/custom_text_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:expandable/expandable.dart';
 
 class PayRent extends StatefulWidget {
   static String id = 'pay_rent';
@@ -76,11 +73,11 @@ class _PayRentState extends State<PayRent> with SingleTickerProviderStateMixin {
         ),
       ),
       body: LayoutBuilder(builder: (context, constraints) {
-        if (constraints.maxHeight < 2400) {
+        if (constraints.maxHeight < 2450) {
           return SafeArea(
             child: SingleChildScrollView(
               child: Container(
-                height: 2300,
+                height: 2400,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -348,21 +345,25 @@ class _PayRentState extends State<PayRent> with SingleTickerProviderStateMixin {
                           children: [
                             HomeRentTabViewWidget(
                               isCreditInfoAccepted: isCreditInfoAccepted,
+                              onPressGetStartedButton: () {},
                               onCheck: (bool val) =>
                                   {isCreditInfoAccepted = val},
                             ),
                             HomeRentTabViewWidget(
                               isCreditInfoAccepted: isCreditInfoAccepted,
+                              onPressGetStartedButton: null,
                               onCheck: (bool val) =>
                                   {isCreditInfoAccepted = val},
                             ),
                             HomeRentTabViewWidget(
                               isCreditInfoAccepted: isCreditInfoAccepted,
+                              onPressGetStartedButton: null,
                               onCheck: (bool val) =>
                                   {isCreditInfoAccepted = val},
                             ),
                             HomeRentTabViewWidget(
                               isCreditInfoAccepted: isCreditInfoAccepted,
+                              onPressGetStartedButton: null,
                               onCheck: (bool val) =>
                                   {isCreditInfoAccepted = val},
                             ),

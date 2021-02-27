@@ -1,5 +1,6 @@
 import 'package:demo/widget/custom_text_form_field.dart';
 import 'package:demo/widget/custom_text_widget.dart';
+import 'package:demo/widget/flat_button_widget.dart';
 import 'package:demo/widget/pay_rent_house_tab_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -10,10 +11,12 @@ class HomeRentTabViewWidget extends StatelessWidget {
     Key key,
     @required this.onCheck,
     @required this.isCreditInfoAccepted,
+    @required this.onPressGetStartedButton,
   }) : super(key: key);
 
   final bool isCreditInfoAccepted;
   final Function onCheck;
+  final onPressGetStartedButton;
 
   @override
   Widget build(BuildContext context) {
@@ -71,15 +74,12 @@ class HomeRentTabViewWidget extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FlatButton(
-            minWidth: double.infinity,
-            color: isCreditInfoAccepted ? Colors.pink : Colors.pink[100],
-            // splashColor: Colors.pink,
-            onPressed: () {},
-            child: Text('Get Started'),
-          ),
+        FlatButtonWidget(
+          color: isCreditInfoAccepted ? Colors.pink : Colors.pink[50],
+          // isCreditInfoAccepted: isCreditInfoAccepted,
+          onPressFlatButton: onPressGetStartedButton,
+
+          buttonTitle: 'get Started',
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 5, 0, 0),
@@ -408,18 +408,21 @@ class HomeRentTabViewWidget extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
+        Container(
+          height: 300,
           child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: 3,
-              itemBuilder: (BuildContext context, int count) {
-                return QuestionAnsExpandedWidget(
-                    que: 'How secure zERO broker PAY?',
-                    ans: 'Security is incredibly important to us, therefore' +
-                        'when you pay on our website ,we use sofisticated security' +
-                        'measure to ensure your confidential information is secure' +
-                        'and encrypted.Zero broker pay');
-              }),
+            physics: NeverScrollableScrollPhysics(),
+            //  scrollDirection: Axis.vertical,
+            itemCount: 3,
+            itemBuilder: (BuildContext context, int count) {
+              return QuestionAnsExpandedWidget(
+                  que: 'How secure zERO broker PAY?',
+                  ans: 'Security is incredibly important to us, therefore' +
+                      'when you pay on our website ,we use sofisticated security' +
+                      'measure to ensure your confidential information is secure' +
+                      'and encrypted.Zero broker pay');
+            },
+          ),
         ),
       ],
     );

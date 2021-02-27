@@ -445,7 +445,8 @@ class TabViewTwo extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         CustomTextWidget(
-                          title: "No Broker Relocation Services for Corporates",
+                          title:
+                              "Zero Broker Relocation Services for Corporates",
                           fontWeight: FontWeight.bold,
                         ),
                         SizedBox(

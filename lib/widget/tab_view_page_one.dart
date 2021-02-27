@@ -7,12 +7,18 @@ class TabViewPageOneWidget extends StatelessWidget {
   final Function onTapSearch;
   final onTapCardItemPayRent;
   final onTapCardItemRentalAgreement;
+  final onTapCardItemMoversAndPackers;
+  final onTapCardItemClickEarn;
+  final onTapCardItemHomeServices;
 
   TabViewPageOneWidget({
     @required this.onTapToCall,
     @required this.onTapSearch,
     @required this.onTapCardItemPayRent,
     @required this.onTapCardItemRentalAgreement,
+    @required this.onTapCardItemMoversAndPackers,
+    @required this.onTapCardItemClickEarn,
+    @required this.onTapCardItemHomeServices,
     Key key,
   }) : super(key: key);
 
@@ -116,6 +122,9 @@ class TabViewPageOneWidget extends StatelessWidget {
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(20, 5, 0, 0),
             child: TabBarSecondCardWidget(
+              onTapHomeServices: onTapCardItemHomeServices,
+              onTapClickEarn: onTapCardItemClickEarn,
+              onTapMoversAndPackers: onTapCardItemMoversAndPackers,
               onTapPayRent: onTapCardItemPayRent,
               onTapRentalAgreement: onTapCardItemRentalAgreement,
             ),
@@ -454,7 +463,8 @@ class TabViewPageOneWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         CustomTextWidget(
-                          title: "No Broker Relocation Services for Corporates",
+                          title:
+                              "Zero Broker Relocation Services for Corporates",
                           fontWeight: FontWeight.bold,
                         ),
                         SizedBox(
