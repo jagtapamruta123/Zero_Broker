@@ -1,25 +1,28 @@
-import 'package:demo/pages/home_service_bottom_navigation/home_service_on_item_click_page.dart';
+import 'package:demo/pages/home_service_bottom_navigation/painting_consultation_page.dart';
+import 'package:demo/pages/home_service_bottom_navigation/select_apartment_type.dart';
 import 'package:demo/services/call_msg_service.dart';
+import 'package:demo/widget/bottom_navigation__buton.dart';
 import 'package:demo/widget/custom_list_view_widget.dart';
 import 'package:demo/widget/custom_text_widget.dart';
 import 'package:demo/widget/flat_button_widget.dart';
 import 'package:demo/widget/pay_rent_house_tab_widget.dart';
 import 'package:demo/widget/tab_bar_widget.dart';
+import 'package:demo/widget/z_b_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../rental_agreement_page.dart';
-import 'home_service_card_item_pages/card_item_page.dart';
+import '../z_b_cash_page.dart';
 
-class HomeserviceHomePage extends StatefulWidget {
-  static String id = 'nav_home';
+class HomeserviceItemPage extends StatefulWidget {
+  static String id = 'home_service_item';
   @override
-  _HomeserviceHomePageState createState() => _HomeserviceHomePageState();
+  _HomeserviceItemPageState createState() => _HomeserviceItemPageState();
 }
 
-class _HomeserviceHomePageState extends State<HomeserviceHomePage> {
+class _HomeserviceItemPageState extends State<HomeserviceItemPage> {
   String _selectCity;
   String mobileNumber = '9637082374';
   final CallsAndMessagesService _service = locator<CallsAndMessagesService>();
@@ -28,6 +31,74 @@ class _HomeserviceHomePageState extends State<HomeserviceHomePage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Row(
+          // crossAxisAlignment: CrossAxisAlignment.end,
+          // mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            CircleAvatar(
+              child: Icon(
+                Icons.mode_sharp,
+                color: Colors.white,
+                size: 20,
+              ),
+              radius: 14,
+              backgroundColor: Colors.pink[400],
+            ),
+            SizedBox(
+              width: 7,
+            ),
+            RichText(
+              // locale: ,
+              text: TextSpan(
+                text: 'ZERO',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                    color: Colors.black,
+                    letterSpacing: 0.5),
+                children: [
+                  TextSpan(
+                    text: ' Broker',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        letterSpacing: 0.5,
+                        color: Colors.black),
+                  ),
+                  TextSpan(
+                    text: '  (Home services)',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 8,
+                        letterSpacing: 0.5,
+                        color: Colors.black),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ZeroBrokerCashIcon(
+              onTapIcon: () => Navigator.pushNamed(
+                context,
+                ZBCashPage.id,
+              ),
+            ),
+          )
+        ],
+      ),
+      bottomNavigationBar: NavigationButtonWidget(
+        title: 'Book Free Consultation ',
+        onTap: () {
+          Navigator.pushNamed(context, SelectApartmentType.id);
+        },
+        // color: Colors.pink,
+      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -35,11 +106,18 @@ class _HomeserviceHomePageState extends State<HomeserviceHomePage> {
           children: [
             Container(
               width: double.infinity,
-              height: 320,
-              color: Colors.pink[50],
+              height: 720,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                      'https://media.istockphoto.com/photos/cute-panda-bear-climbing-in-tree-picture-id523761634?k=6&m=523761634&s=612x612&w=0&h=0L2VZTQvcOVkSmj0ZLL9ntIw2FXqJwZ70fz2Qmq6D-c='),
+                  fit: BoxFit.fill,
+                ),
+              ),
+              //  color: Colors.pink[50],
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -104,67 +182,191 @@ class _HomeserviceHomePageState extends State<HomeserviceHomePage> {
                     ),
                   ),
                   SizedBox(
-                    height: 25,
+                    height: 30,
                   ),
                   Container(
-                    height: 140,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.4),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CustomTextWidget(
+                            title: 'Best Home Painters in PUNE',
+                            fontSize: 25,
+                          ),
+                          CustomTextWidget(
+                            title: 'Get Lowest Price for home painting in pune',
+                            fontSize: 15,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Card(
+                    //Card with stadium border
+                    shape: StadiumBorder(
+                      //Card with stadium border
+                      side: BorderSide(
+                        color: Colors.transparent,
+                        width: 2.0,
+                      ),
+                    ),
+                    // shape: RoundedRectangleBorder(
+                    //   borderRadius: BorderRadius.circular(10),
+                    // ),
+                    margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: ListTile(
+                      leading: Container(
+                        width: 30,
+                        height: 15,
+                        margin: EdgeInsets.fromLTRB(10, 5, 0, 0),
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(7),
+                        ),
+                        child: Padding(
+                            padding: const EdgeInsets.fromLTRB(5, 2, 4, 2),
+                            child: CustomTextWidget(
+                              title: 'Offer',
+                              fontSize: 8,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            )),
+                      ),
+                      title: CustomTextWidget(
+                        title: 'Upto 25% off on Painting Service',
+                      ),
+                      trailing: CircleAvatar(
+                        child: Icon(
+                          Icons.home_outlined,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 10,
+                    ),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: Colors.white,
+                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                      child: CustomTextWidget(
+                        title: 'Select waht you want',
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 350,
+                    child: GridView.builder(
+                      padding: EdgeInsets.fromLTRB(2, 0, 2, 0),
+                      physics: NeverScrollableScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        mainAxisSpacing: 0,
+                        crossAxisSpacing: 0,
+                      ),
+                      itemCount: 9,
+                      itemBuilder: (BuildContext context, int index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              ExpertPaintingConsultationPage.id,
+                            );
+                          },
+                          child: Card(
+                            elevation: 5,
+                            color: Colors.pink[50].withOpacity(0.3),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                      'https://media.istockphoto.com/photos/cute-panda-bear-climbing-in-tree-picture-id523761634?k=6&m=523761634&s=612x612&w=0&h=0L2VZTQvcOVkSmj0ZLL9ntIw2FXqJwZ70fz2Qmq6D-c='),
+                                  //   fit: BoxFit.fill,
+                                ),
+                                SizedBox(
+                                  height: 12,
+                                ),
+                                Text(
+                                  'Rental Painting',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 10,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: 120,
+              margin: EdgeInsets.fromLTRB(15, 10, 0, 0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomTextWidget(
+                    title: 'Home Painting Include Includes',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Expanded(
                     child: ListView.builder(
                       // controller: ,
                       itemCount: 5,
                       shrinkWrap: true,
-
+                      padding: EdgeInsets.fromLTRB(15, 0, 15, 8),
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (BuildContext context, int index) => Card(
                         elevation: 10,
-                        margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: Container(
-                          width: 290,
-                          height: 105,
-                          //margin: EdgeInsets.only(),
-                          child: Row(
-                            children: [
-                              Container(
-                                width: 120,
-                                height: 140,
-                                child: Image.network(
-                                  'https://media.istockphoto.com/photos/cute-panda-bear-climbing-in-tree-picture-id523761634?k=6&m=523761634&s=612x612&w=0&h=0L2VZTQvcOVkSmj0ZLL9ntIw2FXqJwZ70fz2Qmq6D-c=',
-                                  fit: BoxFit.fill,
-                                ),
+                          width: 300,
+                          child: ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: Colors.pink[50],
+                              child: Text(
+                                '${index + 1}',
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    CustomTextWidget(
-                                      title: 'Best Safety Standard.',
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                    CustomTextWidget(
-                                      title: 'Using Gloves and Masks',
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                    CardTextWidget(
-                                      line: '100% contactless service',
-                                    ),
-                                    SizedBox(
-                                      height: 3,
-                                    ),
-                                    CardTextWidget(
-                                      line: 'Usage of Aarogya Setu app',
-                                    ),
-                                    SizedBox(
-                                      height: 3,
-                                    ),
-                                    CardTextWidget(
-                                      line: 'Couriered and delivered to you',
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
+                            ),
+                            title: CustomTextWidget(
+                              title:
+                                  'Free House Inspection with Expert Consultation',
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
+                          // height: 50,
+                          //margin: EdgeInsets.only(),
                         ),
                       ),
                     ),
@@ -172,142 +374,37 @@ class _HomeserviceHomePageState extends State<HomeserviceHomePage> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
             Container(
-              height: 350,
-              child: GridView.builder(
-                padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  mainAxisSpacing: 0,
-                  crossAxisSpacing: 0,
-                ),
-                itemCount: 9,
-                itemBuilder: (BuildContext context, int index) {
-                  return InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, PaintingItemPage.id);
-                    },
-                    child: Card(
-                      color: Colors.pink[50],
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(left: 5),
-                            decoration: BoxDecoration(
-                              color: Colors.orange[100],
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(3, 0, 3, 0),
-                              child: Text(
-                                'Best Price',
-                                style: TextStyle(
-                                  fontSize: 8,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 7,
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 8),
-                            child: Icon(
-                              Icons.book_online_outlined,
-                              size: 40,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'Rental Agreement',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 10,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            Container(
+              // width: double.infinity,
               height: 300,
-              child: ListView.builder(
-                itemCount: 3,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (BuildContext context, int count) {
-                  return InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        HomeserviceItemPage.id,
-                      );
-                    },
-                    child: Card(
-                      child: Container(
-                        width: 250,
-                        height: 85,
-                        //margin: EdgeInsets.only(),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  CustomTextWidget(
-                                    title: 'Book free Consulation',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12,
-                                  ),
-                                  SizedBox(
-                                    height: 4,
-                                  ),
-                                  Expanded(
-                                    child: CustomTextWidget(
-                                      title:
-                                          'Book your free consultation to get accurate quote.',
-                                      fontSize: 10,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  CustomTextWidget(
-                                    title: 'Best Safety Standard.',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.pink,
-                                  ),
-                                ],
-                              ),
-                              Spacer(),
-                              Container(
-                                child: Image.network(
-                                  'https://media.istockphoto.com/photos/cute-panda-bear-climbing-in-tree-picture-id523761634?k=6&m=523761634&s=612x612&w=0&h=0L2VZTQvcOVkSmj0ZLL9ntIw2FXqJwZ70fz2Qmq6D-c=',
-                                  // fit: BoxFit.fill,
-                                ),
-                              )
-                            ],
-                          ),
+              margin: EdgeInsets.fromLTRB(15, 10, 0, 0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomTextWidget(
+                    title: 'How It Works',
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Expanded(
+                    child: ListViewCustomWidget(
+                      length: 3,
+                      subTitle:
+                          'Best in class legal documents at attractive price',
+                      title: 'Lowest Price',
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.blue[50],
+                        child: Icon(
+                          Icons.wifi_protected_setup_outlined,
                         ),
                       ),
                     ),
-                  );
-                },
+                  ),
+                ],
               ),
             ),
             Container(
@@ -378,7 +475,6 @@ class _HomeserviceHomePageState extends State<HomeserviceHomePage> {
             Divider(
               height: 40,
               color: Colors.grey[200],
-              thickness: 20,
             ),
             Container(
               margin: EdgeInsets.fromLTRB(0, 15, 0, 10),

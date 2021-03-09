@@ -392,6 +392,7 @@ class _NavHomePageState extends State<NavHomePage> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                       child: FlatButtonWidget(
+                        minWidth: double.infinity,
                         buttonTitle: 'Create Rental Agreement',
                         onPressFlatButton: () {},
                         color: Colors.pink,

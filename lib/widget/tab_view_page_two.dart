@@ -96,6 +96,7 @@ class TabViewTwo extends StatelessWidget {
                   height: 35.0,
                   child: RaisedButton(
                     onPressed: () {},
+                    color: Colors.pink,
                     child: Text("Post Free Property Ad"),
                   ),
                 ),
@@ -103,399 +104,385 @@ class TabViewTwo extends StatelessWidget {
             ),
           ),
         ),
+        Container(
+            height: 230,
+            //  width: double.infinity,
+            margin: EdgeInsets.fromLTRB(0, 5, 5, 0),
+            child: GridView.builder(
+                itemCount: 6,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  mainAxisSpacing: 0,
+                  crossAxisSpacing: 0,
+                  // childAspectRatio: ((MediaQuery.of(context).size.width / 2) /
+                  //     ((MediaQuery.of(context).size.height) / 2.25)),
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                    child: Center(
+                      child: TabViewBuyCardItem(
+                        hoverMsg: 'new',
+                        icon: Icon(
+                          Icons.car_rental,
+                          size: 40,
+                        ),
+                        title: 'Builders Projects',
+                        onTap: null,
+                      ),
+                    ),
+                  );
+                })
+
+            //TabBarSecondCardWidget(),
+            ),
         Card(
-          elevation: 3,
           child: Container(
-            height: 200,
-            width: double.infinity,
-            margin: EdgeInsets.fromLTRB(20, 5, 0, 0),
-            child: TabBarSecondCardWidget(),
+            height: 105,
+            margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          CustomTextWidget(
+                            title: "Sale Agreement",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title:
+                                "get Dedicated Property Expert to help you buy your dream home.",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Spacer(),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
+                      child: Icon(
+                        Icons.home,
+                        size: 50,
+                        color: Colors.blue[100],
+                      ),
+                    ),
+                  ],
+                ),
+                Divider(),
+                Row(
+                  children: [
+                    CustomTextWidget(
+                      title: "Create Sale Agreement",
+                      fontSize: 10,
+                    ),
+                    Icon(
+                      (Icons.arrow_forward),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
         Card(
           child: Container(
-              height: 75,
-              margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        CustomTextWidget(
-                          title: "Movers n Packers",
-                          fontWeight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Great Price,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "On Time,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Safe Delivery",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ],
+            height: 105,
+            margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          CustomTextWidget(
+                            title: "Sale Agreement",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title:
+                                "get Dedicated Property Expert to help you buy your dream home.",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
-                    child: Icon(
-                      Icons.home,
-                      size: 50,
-                      color: Colors.blue[100],
+                    Spacer(),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
+                      child: Icon(
+                        Icons.home,
+                        size: 50,
+                        color: Colors.blue[100],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        CustomTextWidget(
-                          title: "Explore",
-                        ),
-                        Icon(
-                          (Icons.arrow_forward),
-                        )
-                      ],
+                  ],
+                ),
+                Divider(),
+                Row(
+                  children: [
+                    CustomTextWidget(
+                      title: "Create Sale Agreement",
+                      fontSize: 10,
                     ),
-                  )
-                ],
-              )),
+                    Icon(
+                      (Icons.arrow_forward),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
         Card(
           child: Container(
-              height: 85,
-              margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        CustomTextWidget(
-                          title: "Pay Rent By Credit/Debit card",
-                          fontWeight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Start Paying Rent and earn miles,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "CashBack and rewards",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ],
+            height: 105,
+            margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          CustomTextWidget(
+                            title: "Sale Agreement",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title:
+                                "get Dedicated Property Expert to help you buy your dream home.",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
-                    child: Icon(
-                      Icons.home,
-                      size: 50,
-                      color: Colors.blue[100],
+                    Spacer(),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
+                      child: Icon(
+                        Icons.home,
+                        size: 50,
+                        color: Colors.blue[100],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        CustomTextWidget(
-                          title: "Explore",
-                        ),
-                        Icon(
-                          (Icons.arrow_forward),
-                        )
-                      ],
+                  ],
+                ),
+                Divider(),
+                Row(
+                  children: [
+                    CustomTextWidget(
+                      title: "Create Sale Agreement",
+                      fontSize: 10,
                     ),
-                  )
-                ],
-              )),
+                    Icon(
+                      (Icons.arrow_forward),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
         Card(
           child: Container(
-              height: 75,
-              margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        CustomTextWidget(
-                          title: "Movers n Packers",
-                          fontWeight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Great Price,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "On Time,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Safe Delivery",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ],
+            height: 105,
+            margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          CustomTextWidget(
+                            title: "Sale Agreement",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title:
+                                "get Dedicated Property Expert to help you buy your dream home.",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
-                    child: Icon(
-                      Icons.home,
-                      size: 50,
-                      color: Colors.blue[100],
+                    Spacer(),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
+                      child: Icon(
+                        Icons.home,
+                        size: 50,
+                        color: Colors.blue[100],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        CustomTextWidget(
-                          title: "Explore",
-                        ),
-                        Icon(
-                          (Icons.arrow_forward),
-                        )
-                      ],
+                  ],
+                ),
+                Divider(),
+                Row(
+                  children: [
+                    CustomTextWidget(
+                      title: "Create Sale Agreement",
+                      fontSize: 10,
                     ),
-                  )
-                ],
-              )),
+                    Icon(
+                      (Icons.arrow_forward),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
         Card(
           child: Container(
-              height: 80,
-              margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        CustomTextWidget(
-                          title: "Movers n Packers",
-                          fontWeight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Great Price,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "On Time,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Safe Delivery",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ],
+            height: 105,
+            margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          CustomTextWidget(
+                            title: "Sale Agreement",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title:
+                                "get Dedicated Property Expert to help you buy your dream home.",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
-                    child: Icon(
-                      Icons.home,
-                      size: 50,
-                      color: Colors.blue[100],
+                    Spacer(),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
+                      child: Icon(
+                        Icons.home,
+                        size: 50,
+                        color: Colors.blue[100],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        CustomTextWidget(
-                          title: "Explore",
-                        ),
-                        Icon(
-                          (Icons.arrow_forward),
-                        )
-                      ],
+                  ],
+                ),
+                Divider(),
+                Row(
+                  children: [
+                    CustomTextWidget(
+                      title: "Create Sale Agreement",
+                      fontSize: 10,
                     ),
-                  )
-                ],
-              )),
+                    Icon(
+                      (Icons.arrow_forward),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
         Card(
           child: Container(
-              height: 75,
-              margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        CustomTextWidget(
-                          title: "Movers n Packers",
-                          fontWeight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Great Price,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "On Time,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Safe Delivery",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ],
+            height: 105,
+            margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          CustomTextWidget(
+                            title: "Sale Agreement",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title:
+                                "get Dedicated Property Expert to help you buy your dream home.",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
-                    child: Icon(
-                      Icons.home,
-                      size: 50,
-                      color: Colors.blue[100],
+                    Spacer(),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
+                      child: Icon(
+                        Icons.home,
+                        size: 50,
+                        color: Colors.blue[100],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        CustomTextWidget(
-                          title: "Explore",
-                        ),
-                        Icon(
-                          (Icons.arrow_forward),
-                        )
-                      ],
+                  ],
+                ),
+                Divider(),
+                Row(
+                  children: [
+                    CustomTextWidget(
+                      title: "Create Sale Agreement",
+                      fontSize: 10,
                     ),
-                  )
-                ],
-              )),
-        ),
-        Card(
-          child: Container(
-              height: 89,
-              margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        CustomTextWidget(
-                          title:
-                              "Zero Broker Relocation Services for Corporates",
-                          fontWeight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Get in touch with us for end to",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "end Home search and relocation,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "services foryour employes",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
-                    child: Icon(
-                      Icons.home,
-                      size: 50,
-                      color: Colors.blue[100],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        CustomTextWidget(
-                          title: "Explore",
-                        ),
-                        Icon(
-                          (Icons.arrow_forward),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              )),
+                    Icon(
+                      (Icons.arrow_forward),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
         GestureDetector(
           onTap: onTapCall,
@@ -540,6 +527,67 @@ class TabViewTwo extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+class TabViewBuyCardItem extends StatelessWidget {
+  Widget icon;
+  String title;
+  Function onTap;
+  String hoverMsg;
+  TabViewBuyCardItem({
+    this.hoverMsg,
+    @required this.icon,
+    @required this.title,
+    @required this.onTap,
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        color: Colors.transparent,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              decoration: BoxDecoration(
+                color: Colors.orange,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(3, 0, 3, 0),
+                child: Text(
+                  hoverMsg,
+                  style: TextStyle(fontSize: 8),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: icon,
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 10,
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

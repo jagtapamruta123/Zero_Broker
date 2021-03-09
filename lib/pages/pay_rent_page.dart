@@ -53,22 +53,35 @@ class _PayRentState extends State<PayRent> with SingleTickerProviderStateMixin {
             SizedBox(
               width: 7,
             ),
-            Text(
-              'ZERO',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+            RichText(
+              // locale: ,
+              text: TextSpan(
+                text: 'ZERO',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                    color: Colors.black,
+                    letterSpacing: 0.5),
+                children: [
+                  TextSpan(
+                    text: ' Broker',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        letterSpacing: 0.5,
+                        color: Colors.black),
+                  ),
+                  TextSpan(
+                    text: '  (Payments)',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 8,
+                        letterSpacing: 0.5,
+                        color: Colors.black),
+                  ),
+                ],
               ),
             ),
-            SizedBox(
-              width: 5,
-            ),
-            Text(
-              'BROKER',
-              style: TextStyle(
-                color: Colors.black54,
-              ),
-            )
           ],
         ),
       ),
@@ -178,11 +191,13 @@ class _PayRentState extends State<PayRent> with SingleTickerProviderStateMixin {
                       margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                       child: CarouselSlider.builder(
                         itemCount: 6,
-                        itemBuilder: (BuildContext context, int itemIndex,
-                                int options) =>
+                        itemBuilder: (
+                          BuildContext context,
+                          int itemIndex,
+                          int options,
+                        ) =>
                             Card(
                           child: Container(
-//height: 65,
                             width: double.infinity,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,

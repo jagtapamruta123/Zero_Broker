@@ -75,9 +75,12 @@ class HomeRentTabViewWidget extends StatelessWidget {
           ),
         ),
         FlatButtonWidget(
-          color: isCreditInfoAccepted ? Colors.pink : Colors.pink[50],
+          color: Colors.pink,
+          //  isCreditInfoAccepted ? Colors.pink : Colors.pink[50],
           // isCreditInfoAccepted: isCreditInfoAccepted,
           onPressFlatButton: onPressGetStartedButton,
+
+          minWidth: double.infinity,
 
           buttonTitle: 'get Started',
         ),
@@ -234,6 +237,7 @@ class HomeRentTabViewWidget extends StatelessWidget {
                   ),
                 ),
               ),
+
               Container(
                 margin: EdgeInsets.fromLTRB(25, 20, 10, 0),
                 child: Text(

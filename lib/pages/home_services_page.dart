@@ -3,6 +3,8 @@
 import 'package:demo/model/bottom_sheet_model.dart';
 import 'package:demo/pages/rental_agreement_bottom_navigation_bar_pages/support.dart';
 import 'package:demo/pages/rental_agreement_page.dart';
+import 'package:demo/pages/z_b_cash_page.dart';
+import 'package:demo/widget/z_b_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -81,28 +83,14 @@ class _HomeServicePageState extends State<HomeServicePage> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: CircleAvatar(
-              radius: 12,
-              backgroundColor: Colors.yellow[800],
-              child: CircleAvatar(
-                radius: 10.5,
-                backgroundColor: Colors.yellow[200],
-                child: CircleAvatar(
-                  radius: 9,
-                  child: Text(
-                    'N',
-                    style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  backgroundColor: Colors.yellow[800],
-                ),
+            padding: const EdgeInsets.all(10.0),
+            child: ZeroBrokerCashIcon(
+              onTapIcon: () => Navigator.pushNamed(
+                context,
+                ZBCashPage.id,
               ),
             ),
-          ),
+          )
         ],
       ),
       body: _tabs[_currentIndex],

@@ -1,3 +1,4 @@
+import 'package:demo/pages/property_owner_page.dart';
 import 'package:demo/widget/custom_text_widget.dart';
 import 'package:demo/widget/tab_bar_widget.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,10 @@ class TabViewPageOneWidget extends StatelessWidget {
   final onTapCardItemMoversAndPackers;
   final onTapCardItemClickEarn;
   final onTapCardItemHomeServices;
+  final Function onTapMPBottomCard;
+  final Function onTapPRBottomCard;
+  final Function onTapPayUtilityBill;
+  final Function onTapRABottom;
 
   TabViewPageOneWidget({
     @required this.onTapToCall,
@@ -19,6 +24,10 @@ class TabViewPageOneWidget extends StatelessWidget {
     @required this.onTapCardItemMoversAndPackers,
     @required this.onTapCardItemClickEarn,
     @required this.onTapCardItemHomeServices,
+    @required this.onTapMPBottomCard,
+    @required this.onTapPRBottomCard,
+    @required this.onTapPayUtilityBill,
+    @required this.onTapRABottom,
     Key key,
   }) : super(key: key);
 
@@ -106,7 +115,9 @@ class TabViewPageOneWidget extends StatelessWidget {
                   minWidth: 300,
                   height: 35.0,
                   child: RaisedButton(
-                    onPressed: () {},
+                    color: Colors.pink,
+                    onPressed: () =>
+                        Navigator.pushNamed(context, PropertyOwnerPage.id),
                     child: Text("Post Free Property Ad"),
                   ),
                 ),
@@ -130,6 +141,273 @@ class TabViewPageOneWidget extends StatelessWidget {
             ),
           ),
         ),
+        InkWell(
+          onTap: onTapMPBottomCard,
+          child: Card(
+            child: Container(
+                height: 75,
+                margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          CustomTextWidget(
+                            title: "Movers n Packers",
+                            fontWeight: FontWeight.bold,
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title: "Great Price,",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title: "On Time,",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title: "Safe Delivery",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
+                      child: Icon(
+                        Icons.home,
+                        size: 50,
+                        color: Colors.blue[100],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          CustomTextWidget(
+                            title: "Explore",
+                          ),
+                          Icon(
+                            (Icons.arrow_forward),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                )),
+          ),
+        ),
+        InkWell(
+          onTap: onTapPRBottomCard,
+          child: Card(
+            child: Container(
+                height: 85,
+                margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          CustomTextWidget(
+                            title: "Pay Rent By Credit/Debit card",
+                            fontWeight: FontWeight.bold,
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title: "Start Paying Rent and earn miles,",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title: "CashBack and rewards",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
+                      child: Icon(
+                        Icons.home,
+                        size: 50,
+                        color: Colors.blue[100],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          CustomTextWidget(
+                            title: "Explore",
+                          ),
+                          Icon(
+                            (Icons.arrow_forward),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                )),
+          ),
+        ),
+        InkWell(
+          onTap: onTapRABottom,
+          child: Card(
+            child: Container(
+                height: 75,
+                margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          CustomTextWidget(
+                            title: "Rental Agreement",
+                            fontWeight: FontWeight.bold,
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title: "Great Price,",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title: "On Time,",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title: "Safe Delivery",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
+                      child: Icon(
+                        Icons.home,
+                        size: 50,
+                        color: Colors.blue[100],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          CustomTextWidget(
+                            title: "Explore",
+                          ),
+                          Icon(
+                            (Icons.arrow_forward),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                )),
+          ),
+        ),
+        InkWell(
+          onTap: onTapPayUtilityBill,
+          child: Card(
+            child: Container(
+                height: 80,
+                margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          CustomTextWidget(
+                            title: "Pay Utility Bills",
+                            fontWeight: FontWeight.bold,
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          CustomTextWidget(
+                            fontSize: 10,
+                            title:
+                                "Stay at home ,pay Your Electricity,water and other bills",
+                            color: Colors.black54,
+                            fontWeight: FontWeight.normal,
+                          ),
+                          // CustomTextWidget(
+                          //   fontSize: 10,
+                          //   title: "On Time,",
+                          //   color: Colors.black54,
+                          //   fontWeight: FontWeight.normal,
+                          // ),
+                          // CustomTextWidget(
+                          //   fontSize: 10,
+                          //   title: "Safe Delivery",
+                          //   color: Colors.black54,
+                          //   fontWeight: FontWeight.normal,
+                          // ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
+                      child: Icon(
+                        Icons.home,
+                        size: 50,
+                        color: Colors.blue[100],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          CustomTextWidget(
+                            title: "Explore",
+                          ),
+                          Icon(
+                            (Icons.arrow_forward),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                )),
+          ),
+        ),
         Card(
           child: Container(
               height: 75,
@@ -144,7 +422,7 @@ class TabViewPageOneWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         CustomTextWidget(
-                          title: "Movers n Packers",
+                          title: "Know Your Rent",
                           fontWeight: FontWeight.bold,
                         ),
                         SizedBox(
@@ -195,65 +473,7 @@ class TabViewPageOneWidget extends StatelessWidget {
                 ],
               )),
         ),
-        Card(
-          child: Container(
-              height: 85,
-              margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        CustomTextWidget(
-                          title: "Pay Rent By Credit/Debit card",
-                          fontWeight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Start Paying Rent and earn miles,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "CashBack and rewards",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
-                    child: Icon(
-                      Icons.home,
-                      size: 50,
-                      color: Colors.blue[100],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        CustomTextWidget(
-                          title: "Explore",
-                        ),
-                        Icon(
-                          (Icons.arrow_forward),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              )),
-        ),
+
         Card(
           child: Container(
               height: 75,
@@ -268,7 +488,7 @@ class TabViewPageOneWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         CustomTextWidget(
-                          title: "Movers n Packers",
+                          title: "ZeroBroker for NRI\'S",
                           fontWeight: FontWeight.bold,
                         ),
                         SizedBox(
@@ -319,136 +539,7 @@ class TabViewPageOneWidget extends StatelessWidget {
                 ],
               )),
         ),
-        Card(
-          child: Container(
-              height: 80,
-              margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        CustomTextWidget(
-                          title: "Movers n Packers",
-                          fontWeight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Great Price,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "On Time,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Safe Delivery",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
-                    child: Icon(
-                      Icons.home,
-                      size: 50,
-                      color: Colors.blue[100],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        CustomTextWidget(
-                          title: "Explore",
-                        ),
-                        Icon(
-                          (Icons.arrow_forward),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              )),
-        ),
-        Card(
-          child: Container(
-              height: 75,
-              margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        CustomTextWidget(
-                          title: "Movers n Packers",
-                          fontWeight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Great Price,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "On Time,",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                        CustomTextWidget(
-                          fontSize: 10,
-                          title: "Safe Delivery",
-                          color: Colors.black54,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 3, 10),
-                    child: Icon(
-                      Icons.home,
-                      size: 50,
-                      color: Colors.blue[100],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        CustomTextWidget(
-                          title: "Explore",
-                        ),
-                        Icon(
-                          (Icons.arrow_forward),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              )),
-        ),
+
         Card(
           child: Container(
               height: 89,
@@ -515,6 +606,7 @@ class TabViewPageOneWidget extends StatelessWidget {
                 ],
               )),
         ),
+
         GestureDetector(
           onTap: onTapToCall,
           child: Card(

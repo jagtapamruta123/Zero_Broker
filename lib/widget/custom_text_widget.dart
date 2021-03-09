@@ -5,10 +5,12 @@ class CustomTextWidget extends StatelessWidget {
   FontWeight fontWeight;
   double fontSize;
   Color color;
+  TextDecoration decoration;
   CustomTextWidget({
     this.color,
     this.title,
     this.fontSize,
+    this.decoration,
     this.fontWeight,
     Key key,
   }) : super(key: key);
@@ -17,12 +19,13 @@ class CustomTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      maxLines: 2,
+      maxLines: 5,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
         color: color,
         fontWeight: fontWeight,
         fontSize: fontSize,
+        decoration: decoration,
       ),
     );
   }

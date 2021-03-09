@@ -13,10 +13,13 @@ class DrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: icon,
-      title: Text(title),
-      onTap: function,
+    return Card(
+      //   elevation: 2,
+      child: ListTile(
+        leading: icon,
+        title: Text(title),
+        onTap: function,
+      ),
     );
   }
 }

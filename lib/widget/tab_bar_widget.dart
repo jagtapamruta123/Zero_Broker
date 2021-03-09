@@ -48,12 +48,14 @@ class TabSearchBarWidget extends StatelessWidget {
   Icon iconSearch;
   Widget iconSuffix;
   InputBorder enableBorder;
+  bool readOnly;
   TabSearchBarWidget({
     @required this.hintText,
     @required this.function,
     this.iconSearch,
     this.iconSuffix,
     this.enableBorder,
+    this.readOnly = false,
     Key key,
   }) : super(key: key);
 
@@ -62,14 +64,14 @@ class TabSearchBarWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
       child: Container(
-        height: 40,
+        height: 43,
         child: TextField(
-          readOnly: true,
+          readOnly: readOnly,
           onTap: function,
           showCursor: false,
           enableInteractiveSelection: false,
           style: TextStyle(
-            fontSize: 5,
+            fontSize: 12,
             color: Colors.black,
           ),
           decoration: InputDecoration(
@@ -121,9 +123,10 @@ class CardTextWidget extends StatelessWidget {
         ),
         Text(
           line,
+          maxLines: 2,
           style: TextStyle(
             fontSize: 9,
-            letterSpacing: 0.2,
+            //  letterSpacing: 0.0,
           ),
         )
       ],

@@ -133,6 +133,7 @@ class _SearchLocalitiesState extends State<SearchLocalities> {
           ),
         ),
         bottomNavigationBar: NavigationButtonWidget(
+          onTap: () {},
           title: 'Search',
         ),
         body: SingleChildScrollView(

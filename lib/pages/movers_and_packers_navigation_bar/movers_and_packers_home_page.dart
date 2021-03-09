@@ -168,10 +168,10 @@ class _MPHomePageState extends State<MPHomePage>
               controller: _tabController,
               tabs: [
                 Tab(
-                  text: 'tab1Name',
+                  text: 'Within City',
                 ),
                 Tab(
-                  text: 'tab2Name',
+                  text: 'Between City',
                 ),
               ],
             ),
@@ -291,6 +291,7 @@ class _MPHomePageState extends State<MPHomePage>
                           // thickness: 2.5,
                         ),
                         FlatButtonWidget(
+                          minWidth: double.infinity,
                           buttonTitle: 'Estimate Moving Cost',
                           color: Colors.pink,
                           onPressFlatButton: () {
@@ -374,6 +375,7 @@ class _MPHomePageState extends State<MPHomePage>
                                 // thickness: 2.5,
                               ),
                               FlatButtonWidget(
+                                minWidth: double.infinity,
                                 buttonTitle: 'Get Quotes',
                                 color: Colors.pink,
                                 onPressFlatButton: () {},

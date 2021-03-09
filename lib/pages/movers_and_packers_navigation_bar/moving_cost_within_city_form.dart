@@ -35,6 +35,7 @@ class _MovingCostPageState extends State<MovingCostPage> {
         ),
       ),
       bottomNavigationBar: NavigationButtonWidget(
+        onTap: () {},
         title: 'Next',
       ),
       body: SingleChildScrollView(

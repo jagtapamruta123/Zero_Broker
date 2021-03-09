@@ -9,13 +9,17 @@ class CustomDrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Container(
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 250,
               width: MediaQuery.of(context).size.width * 0.85,
               child: DrawerHeader(
+                  //  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
                   decoration: BoxDecoration(
                     color: Colors.red[100],
                   ),
@@ -23,22 +27,19 @@ class CustomDrawerWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(7, 0, 0, 0),
-                        child: CircleAvatar(
-                          radius: 25,
-                          child: Text(
-                            'A',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                            ),
+                      CircleAvatar(
+                        radius: 25,
+                        child: Text(
+                          'A',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
                           ),
-                          backgroundColor: Colors.pinkAccent[100],
                         ),
+                        backgroundColor: Colors.pinkAccent[100],
                       ),
                       SizedBox(
-                        height: 4,
+                        height: 110,
                       ),
                       Text(
                         'user name',
@@ -48,61 +49,60 @@ class CustomDrawerWidget extends StatelessWidget {
                   //Text("Header"),
                   ),
             ),
-          ),
-          Expanded(
-            flex: 8,
-            child: ListView(
-              children: [
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-                DrawerWidget(
-                  icon: Icon(Icons.home),
-                  title: 'home',
-                ),
-              ],
+            Container(
+              height: 600,
+              child: ListView(
+                physics: NeverScrollableScrollPhysics(),
+                children: [
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                  DrawerWidget(
+                    icon: Icon(Icons.home),
+                    title: 'home',
+                  ),
+                ],
+              ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
+            Container(
+              height: 75,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -120,9 +120,9 @@ class CustomDrawerWidget extends StatelessWidget {
                 ],
               ),
               color: Colors.red[100],
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

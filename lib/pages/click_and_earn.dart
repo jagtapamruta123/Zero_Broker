@@ -8,7 +8,6 @@ import 'package:demo/widget/pay_rent_house_tab_widget.dart';
 import 'package:dropdown_formfield/dropdown_formfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:groovin_widgets/groovin_widgets.dart';
 
 class ClickAndEarn extends StatefulWidget {
   static String id = 'click_and_earn';
@@ -187,6 +186,7 @@ class _ClickAndEarnState extends State<ClickAndEarn>
                             height: 15,
                           ),
                           FlatButtonWidget(
+                            minWidth: double.infinity,
                             buttonTitle: 'Take Photo',
                             onPressFlatButton: () {},
                             color: Colors.pink,
@@ -348,6 +348,7 @@ class _ClickAndEarnState extends State<ClickAndEarn>
                             height: 10,
                           ),
                           FlatButtonWidget(
+                            minWidth: double.infinity,
                             buttonTitle: 'Take Photo',
                             onPressFlatButton: () {},
                             color: Colors.pink,
