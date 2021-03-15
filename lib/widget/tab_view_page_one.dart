@@ -41,6 +41,7 @@ class TabViewPageOneWidget extends StatelessWidget {
             color: Colors.grey,
             size: 20,
           ),
+          border: InputBorder.none,
           function: onTapSearch,
           hintText: "Search upto 3 locations",
         ),

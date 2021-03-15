@@ -1,3 +1,4 @@
+import 'package:demo/login.dart';
 import 'package:demo/pages/click_and_earn.dart';
 import 'package:demo/pages/home_page.dart';
 import 'package:demo/pages/home_service_bottom_navigation/home_service_on_item_click_page.dart';
@@ -9,7 +10,9 @@ import 'package:demo/pages/packers_and_movers_page.dart';
 import 'package:demo/pages/pay_rent_page.dart';
 import 'package:demo/pages/pay_utilities_bills.dart';
 import 'package:demo/pages/property_owner_page.dart';
+import 'package:demo/pages/property_pages/location_page.dart';
 import 'package:demo/pages/property_pages/post_new_property.dart';
+import 'package:demo/pages/property_pages/property_details.dart';
 import 'package:demo/pages/property_pages/property_owner_add.dart';
 import 'package:demo/pages/recent_transaction.dart';
 import 'package:demo/pages/rental_agreement_bottom_navigation_bar_pages/home_page.dart';
@@ -26,6 +29,7 @@ import 'pages/home_service_bottom_navigation/home_service_card_item_pages/card_i
 import 'pages/home_service_bottom_navigation/home_service_card_item_pages/select_home_service_page.dart';
 import 'pages/home_service_bottom_navigation/painting_consultation_page.dart';
 import 'pages/home_service_bottom_navigation/select_address_page.dart';
+import 'pages/property_pages/property_completion_steps/add_slot_schedular_page.dart';
 
 void main() {
   setupLocator();
@@ -39,11 +43,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Zero Broker',
       debugShowCheckedModeBanner: false,
-      initialRoute: MyHomePage.id,
+      initialRoute: LoginPage.id,
       themeMode: ThemeMode.system,
       darkTheme: MyThemes.darkTheme,
       theme: MyThemes.lightTheme,
       routes: {
+        LoginPage.id: (context) => LoginPage(),
         MyHomePage.id: (context) => MyHomePage(),
         SearchLocalities.id: (context) => SearchLocalities(),
         PayRent.id: (context) => PayRent(),
@@ -67,7 +72,10 @@ class MyApp extends StatelessWidget {
         PayUtilityMainPage.id: (context) => PayUtilityMainPage(),
         PropertyOwnerPage.id: (context) => PropertyOwnerPage(),
         PostNewPropertyPage.id: (context) => PostNewPropertyPage(),
-        PropertyOwnerAddPage.id: (context) => PropertyOwnerAddPage()
+        PropertyOwnerAddPage.id: (context) => PropertyOwnerAddPage(),
+        PropertyDetailsPage.id: (context) => PropertyDetailsPage(),
+        MapView.id: (context) => MapView(),
+        AddSlotPage.id: (context) => AddSlotPage()
       },
       // theme: ThemeData(
       //   primarySwatch: Colors.blue,

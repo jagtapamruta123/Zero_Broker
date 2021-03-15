@@ -221,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage>
                     controller: _tabController,
                     children: [
                       //=======================tab1=============================
-                      TabViewPageOneWidget(git
+                      TabViewPageOneWidget(
                         onTapPayUtilityBill: () =>
                             Navigator.pushNamed(context, PayUtilityMainPage.id),
                         onTapCardItemHomeServices: () {

@@ -199,7 +199,7 @@ class _SearchLocalitiesState extends State<SearchLocalities> {
                         iconSuffix: Icon(
                           Icons.location_on,
                         ),
-
+                        border: InputBorder.none,
                         // IconButton(
                         //   onPressed: null,
                         //   icon: Icon(
@@ -466,18 +466,22 @@ class _SearchLocalitiesState extends State<SearchLocalities> {
                         iconSuffix: Icon(
                           Icons.location_on,
                         ),
+
                         // IconButton(
                         //   onPressed: null,
                         //   icon: Icon(
                         //     Icons.location_on,
                         //   ),
                         // ),
+
                         iconSearch: Icon(
                           Icons.search,
                           color: Colors.grey,
                           size: 20,
                         ),
-                        function: null,
+
+                        function: () {},
+                        border: InputBorder.none,
                         hintText: "Search upto 3 locations or LandMarks",
                       ),
                       Padding(
@@ -1067,7 +1071,7 @@ class _SearchLocalitiesState extends State<SearchLocalities> {
                         iconSuffix: Icon(
                           Icons.location_on,
                         ),
-
+                        border: InputBorder.none,
                         // IconButton(
                         //   onPressed: null,
                         //   icon: Icon(

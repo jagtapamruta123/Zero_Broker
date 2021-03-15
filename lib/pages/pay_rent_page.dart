@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:demo/widget/custom_text_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+import '../widget/pay_rent_tab_view_widget.dart';
+
 class PayRent extends StatefulWidget {
   static String id = 'pay_rent';
   @override

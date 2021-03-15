@@ -6,7 +6,6 @@ import 'package:demo/widget/custom_list_view_widget.dart';
 import 'package:demo/widget/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class SelectAddressPage extends StatefulWidget {
   static String id = 'select_address';

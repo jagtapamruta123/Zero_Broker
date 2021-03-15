@@ -49,12 +49,16 @@ class TabSearchBarWidget extends StatelessWidget {
   Widget iconSuffix;
   InputBorder enableBorder;
   bool readOnly;
+  InputBorder border;
+  bool filled;
   TabSearchBarWidget({
     @required this.hintText,
     @required this.function,
     this.iconSearch,
     this.iconSuffix,
     this.enableBorder,
+    this.filled = true,
+    this.border,
     this.readOnly = false,
     Key key,
   }) : super(key: key);
@@ -75,14 +79,16 @@ class TabSearchBarWidget extends StatelessWidget {
             color: Colors.black,
           ),
           decoration: InputDecoration(
-            filled: true,
-            fillColor: Colors.white,
-            border: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.white,
-              ),
-              borderRadius: BorderRadius.circular(20),
-            ),
+            filled: filled,
+
+            fillColor: Colors.grey[200],
+            border: border,
+            //  OutlineInputBorder(
+            //   borderSide: BorderSide(
+            //     color: Colors.white,
+            //   ),
+            //   borderRadius: BorderRadius.circular(20),
+            // ),
             enabledBorder: enableBorder,
             prefixIcon: iconSearch,
             suffixIcon: iconSuffix,

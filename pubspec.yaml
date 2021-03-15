@@ -5,11 +5,17 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.0.0 <3.0.0"
 
+# dependency_overrides:
+#   
+#   
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+ 
 
 
  
@@ -26,11 +32,45 @@ dependencies:
   flutter_custom_clippers: ^1.1.2
   percent_indicator: ^2.1.9+1
   modal_bottom_sheet: ^1.0.0+1
-  
+  rflutter_alert: ^2.0.1
   provider: ^4.3.3
-  google_maps_flutter: ^1.2.0
-  flutter_animated_dialog: ^1.2.0
+  google_maps_flutter: ^2.0.1
+  datetime_picker_formfield: ^2.0.0
+  flutter_open_whatsapp: ^0.1.2
+  date_format: ^2.0.2
+  flutter_animated_dialog: ^2.0.0
+  firebase_auth: ^1.0.1 
+  intl: ^0.17.0-nullsafety.2
+  image_picker: ^0.7.2+1
+  image_picker_platform_interface: ^2.0.0 
+  http: ^0.13.0
+  http_parser: ^4.0.0
+  url_launcher_platform_interface: ^1.0.9
+  plugin_platform_interface: ^1.0.1
   
+  
+
+dependency_overrides:
+  intl: ^0.17.0-nullsafety.2
+  image_picker: ^0.7.2+1
+  
+  firebase_auth: ^1.0.1
+  image_picker_platform_interface: ^2.0.0 
+  http: ^0.13.0
+  http_parser: ^4.0.0
+  url_launcher: ^5.7.10
+  url_launcher_platform_interface: ^1.0.9
+  plugin_platform_interface: ^1.0.1
+
+
+   
+
+ 
+  
+ 
+
+
+ 
 
 
 dev_dependencies:

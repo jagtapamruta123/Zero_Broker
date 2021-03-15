@@ -1,10 +1,14 @@
 //import 'dart:js';
 
+import 'package:demo/pages/property_pages/property_details.dart';
 import 'package:demo/pages/rental_agreement_page.dart';
 import 'package:demo/widget/custom_text_widget.dart';
 import 'package:dropdown_formfield/dropdown_formfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import 'package:demo/widget/bottom_navigation__buton.dart';
+// import 'package: _picker/image_picker.dart';
 
 class PostNewPropertyPage extends StatefulWidget {
   static String id = 'post_new_property';
@@ -17,6 +21,7 @@ class _PostNewPropertyPageState extends State<PostNewPropertyPage>
     with SingleTickerProviderStateMixin {
   String _selectedCity;
   TabController _tabController;
+
   bool isSelected = false;
   List commercialTypes = ['rent', 'sale'];
   List residencialTypes = ['rent', 'sale', 'PG/Hostel', 'Flatmates'];
@@ -36,7 +41,17 @@ class _PostNewPropertyPageState extends State<PostNewPropertyPage>
       appBar: AppBar(
         title: Text(
           'Post New Property',
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      bottomNavigationBar: NavigationButtonWidget(
+        title: 'Save and Continue',
+        onTap: () => Navigator.pushNamed(
+          context,
+          PropertyDetailsPage.id,
         ),
       ),
       body: Column(

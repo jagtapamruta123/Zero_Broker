@@ -2,6 +2,7 @@
 
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:demo/pages/property_pages/post_new_property.dart';
 import 'package:demo/pages/rental_agreement_page.dart';
 import 'package:demo/widget/bottom_navigation__buton.dart';
 import 'package:demo/widget/custom_text_widget.dart';
@@ -32,7 +33,10 @@ class _PropertyOwnerAddPageState extends State<PropertyOwnerAddPage> {
       ),
       bottomNavigationBar: NavigationButtonWidget(
         title: 'Post FREE Property Ad ',
-        onTap: () {},
+        onTap: () => Navigator.pushNamed(
+          context,
+          PostNewPropertyPage.id,
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -142,40 +146,41 @@ class _PropertyOwnerAddPageState extends State<PropertyOwnerAddPage> {
             Container(
               height: 190,
               child: ListView.builder(
-                  itemCount: 3,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListTile(
-                      trailing: Icon(
-                        Icons.watch_later_outlined,
-                      ),
-                      title: Row(
-                        children: [
-                          CustomTextWidget(
-                            title: 'Advertise your',
-                            fontSize: 12,
-                          ),
-                          CustomTextWidget(
-                            title: ' Property ',
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          CustomTextWidget(
-                            title: 'on ZeroBroker',
-                            fontSize: 12,
-                          ),
-                          SizedBox(
-                            height: 30,
-                          )
-                        ],
-                      ),
-                      leading: CustomTextWidget(
-                        title: '${index + 1}',
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    );
-                  }),
+                itemCount: 3,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    trailing: Icon(
+                      Icons.watch_later_outlined,
+                    ),
+                    title: Row(
+                      children: [
+                        CustomTextWidget(
+                          title: 'Advertise your',
+                          fontSize: 12,
+                        ),
+                        CustomTextWidget(
+                          title: ' Property ',
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        CustomTextWidget(
+                          title: 'on ZeroBroker',
+                          fontSize: 12,
+                        ),
+                        SizedBox(
+                          height: 30,
+                        )
+                      ],
+                    ),
+                    leading: CustomTextWidget(
+                      title: '${index + 1}',
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );
+                },
+              ),
             ),
             SizedBox(
               height: 30,
