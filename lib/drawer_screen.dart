@@ -1,5 +1,6 @@
 import 'package:demo/pages/login_pages/login.dart';
 import 'package:demo/pages/login_pages/login_componant.dart';
+import 'package:demo/widget/custom_text_widget.dart';
 import 'package:demo/widget/drawer_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -17,40 +18,45 @@ class CustomDrawerWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 250,
-              width: MediaQuery.of(context).size.width * 0.85,
-              child: DrawerHeader(
-                  //  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  decoration: BoxDecoration(
-                    color: Colors.red[100],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        radius: 25,
-                        child: Text(
-                          'A',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, LogInComponantPage.id);
+              },
+              child: Container(
+                height: 150,
+                width: MediaQuery.of(context).size.width * 0.85,
+                child: DrawerHeader(
+                    //  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(
+                      color: Colors.red[100],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CircleAvatar(
+                          radius: 25,
+                          child: Text(
+                            'A',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                            ),
                           ),
+                          backgroundColor: Colors.pinkAccent[100],
                         ),
-                        backgroundColor: Colors.pinkAccent[100],
-                      ),
-                      SizedBox(
-                        height: 110,
-                      ),
-                      Text(
-                        'user name',
-                      )
-                    ],
-                  )
-                  //Text("Header"),
-                  ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          'user name',
+                        )
+                      ],
+                    )
+                    //Text("Header"),
+                    ),
+              ),
             ),
             Container(
               height: 600,
@@ -105,7 +111,7 @@ class CustomDrawerWidget extends StatelessWidget {
               ),
             ),
             Container(
-              height: 75,
+              height: 55,
               child: InkWell(
                 onTap: () {
                   final out = FirebaseAuth.instance.signOut();
@@ -118,14 +124,14 @@ class CustomDrawerWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.replay_circle_filled,
-                      size: 45,
+                      Icons.refresh_outlined,
+                      size: 30,
                     ),
                     SizedBox(
                       width: 20,
                     ),
-                    Text(
-                      'SignOut',
+                    CustomTextWidget(
+                      title: 'SignOut',
                     )
                   ],
                 ),

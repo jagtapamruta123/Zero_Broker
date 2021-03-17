@@ -31,6 +31,7 @@ class FlatButtonWidget extends StatelessWidget {
           buttonTitle,
           style: TextStyle(
             fontSize: 10,
+            letterSpacing: 0.5,
             fontWeight: FontWeight.bold,
           ),
         ),

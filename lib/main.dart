@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Zero Broker',
       debugShowCheckedModeBanner: false,
-      initialRoute: LogInComponantPage.id,
+      initialRoute: MyHomePage.id,
       themeMode: ThemeMode.system,
       darkTheme: MyThemes.darkTheme,
       theme: MyThemes.lightTheme,

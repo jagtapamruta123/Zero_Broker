@@ -607,6 +607,9 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   InputBorder inputBorder;
   bool obscureText;
   Function onChanged;
+  Function validator;
+  EdgeInsetsGeometry padding;
+  bool filled;
 
   CustomTextFormFieldWidget({
     this.hintText,
@@ -616,11 +619,14 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     this.prefix,
     this.inputType,
     this.border,
+    this.filled = true,
     this.lines = 1,
     this.enable = true,
     this.controller,
     this.onTAP,
     this.onChanged,
+    this.validator,
+    this.padding,
     this.obscureText = false,
     this.inputBorder = InputBorder.none,
     this.align = TextAlign.start,
@@ -633,25 +639,31 @@ class CustomTextFormFieldWidget extends StatelessWidget {
       //  cursorHeight: 3,
       obscureText: obscureText,
       onChanged: onChanged,
+
       onTap: onTAP,
       maxLines: lines,
+      validator: validator,
       textAlign: align,
       controller: controller,
       cursorColor: Colors.black,
       enabled: enable,
+
       enableInteractiveSelection: false,
       textDirection: TextDirection.ltr,
       autofocus: false,
 
       decoration: InputDecoration(
         suffixIcon: suffix,
-        prefix: prefix,
-        filled: true,
+        prefixIcon: prefix,
+        filled: filled,
+        isDense: true,
         border: border,
+        contentPadding: padding,
         enabledBorder: inputBorder,
         labelText: labelText,
         labelStyle: TextStyle(
           color: Colors.black54,
+          fontSize: 12,
         ),
         hintStyle: TextStyle(
           fontSize: 12,
@@ -663,8 +675,6 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     );
   }
 }
-
-
 
 class CustomDropDownWidget extends StatelessWidget {
   String title;
