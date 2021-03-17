@@ -1,4 +1,7 @@
+import 'package:demo/pages/login_pages/login.dart';
+import 'package:demo/pages/login_pages/login_componant.dart';
 import 'package:demo/widget/drawer_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawerWidget extends StatelessWidget {
@@ -103,21 +106,29 @@ class CustomDrawerWidget extends StatelessWidget {
             ),
             Container(
               height: 75,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.replay_circle_filled,
-                    size: 45,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    'mode',
-                  )
-                ],
+              child: InkWell(
+                onTap: () {
+                  final out = FirebaseAuth.instance.signOut();
+                  if (out != null) {
+                    Navigator.pushNamed(context, LogInComponantPage.id);
+                  }
+                },
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.replay_circle_filled,
+                      size: 45,
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text(
+                      'SignOut',
+                    )
+                  ],
+                ),
               ),
               color: Colors.red[100],
             )

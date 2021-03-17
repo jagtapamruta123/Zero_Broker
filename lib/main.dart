@@ -1,4 +1,4 @@
-import 'package:demo/login.dart';
+import 'package:demo/pages/login_pages/login.dart';
 import 'package:demo/pages/click_and_earn.dart';
 import 'package:demo/pages/home_page.dart';
 import 'package:demo/pages/home_service_bottom_navigation/home_service_on_item_click_page.dart';
@@ -22,6 +22,7 @@ import 'package:demo/pages/z_b_cash_page.dart';
 import 'package:demo/pages/zero_broker_support_and_help_page.dart';
 import 'package:demo/provider/theme_provider.dart';
 import 'package:demo/services/call_msg_service.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
 
@@ -31,8 +32,10 @@ import 'pages/home_service_bottom_navigation/painting_consultation_page.dart';
 import 'pages/home_service_bottom_navigation/select_address_page.dart';
 import 'pages/property_pages/property_completion_steps/add_slot_schedular_page.dart';
 
-void main() {
+void main() async {
   setupLocator();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -43,12 +46,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Zero Broker',
       debugShowCheckedModeBanner: false,
-      initialRoute: LoginPage.id,
+      initialRoute: LogInComponantPage.id,
       themeMode: ThemeMode.system,
       darkTheme: MyThemes.darkTheme,
       theme: MyThemes.lightTheme,
       routes: {
-        LoginPage.id: (context) => LoginPage(),
+        LogInComponantPage.id: (context) => LogInComponantPage(),
         MyHomePage.id: (context) => MyHomePage(),
         SearchLocalities.id: (context) => SearchLocalities(),
         PayRent.id: (context) => PayRent(),

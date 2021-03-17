@@ -605,6 +605,8 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   TextEditingController controller;
   TextAlign align;
   InputBorder inputBorder;
+  bool obscureText;
+  Function onChanged;
 
   CustomTextFormFieldWidget({
     this.hintText,
@@ -618,6 +620,8 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     this.enable = true,
     this.controller,
     this.onTAP,
+    this.onChanged,
+    this.obscureText = false,
     this.inputBorder = InputBorder.none,
     this.align = TextAlign.start,
     Key key,
@@ -627,6 +631,8 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       //  cursorHeight: 3,
+      obscureText: obscureText,
+      onChanged: onChanged,
       onTap: onTAP,
       maxLines: lines,
       textAlign: align,
@@ -657,6 +663,8 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     );
   }
 }
+
+
 
 class CustomDropDownWidget extends StatelessWidget {
   String title;

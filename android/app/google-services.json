@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "988362403740",
+    "project_id": "zerobroker-b0bb4",
+    "storage_bucket": "zerobroker-b0bb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988362403740:android:c2c72ed42a1ac5c1bce259",
+        "android_client_info": {
+          "package_name": "com.sycryption.zero_broker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988362403740-9a9tg2uo8mei4doi5vo90pi5bcd7ee6o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4rQEcurvp5yWBC8vEsqEvqF-67pGMVd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988362403740-9a9tg2uo8mei4doi5vo90pi5bcd7ee6o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

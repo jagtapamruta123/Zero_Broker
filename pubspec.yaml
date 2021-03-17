@@ -7,6 +7,8 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.0.0 <3.0.0"
 
+
+
 # dependency_overrides:
 #   
 #   
@@ -39,28 +41,34 @@ dependencies:
   flutter_open_whatsapp: ^0.1.2
   date_format: ^2.0.2
   flutter_animated_dialog: ^2.0.0
-  firebase_auth: ^1.0.1 
   intl: ^0.17.0-nullsafety.2
   image_picker: ^0.7.2+1
   image_picker_platform_interface: ^2.0.0 
-  http: ^0.13.0
   http_parser: ^4.0.0
   url_launcher_platform_interface: ^1.0.9
   plugin_platform_interface: ^1.0.1
-  
+  flutter_facebook_login: ^3.0.0
+  flutter_facebook_auth: ^3.0.0
+  firebase_core: 
+  firebase_auth:
+  http: ^0.13.0
+  # cloud_firestore: ^0.16.0+1-nullsafety.0
+ 
   
 
 dependency_overrides:
   intl: ^0.17.0-nullsafety.2
   image_picker: ^0.7.2+1
   
-  firebase_auth: ^1.0.1
-  image_picker_platform_interface: ^2.0.0 
-  http: ^0.13.0
+  firebase_core: 
+  firebase_auth:
+  image_picker_platform_interface: ^2.0.1 
+  # http: ^0.13.0
   http_parser: ^4.0.0
   url_launcher: ^5.7.10
   url_launcher_platform_interface: ^1.0.9
   plugin_platform_interface: ^1.0.1
+ 
 
 
    
@@ -76,6 +84,14 @@ dependency_overrides:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+# flutter_application_id:
+#   android: 
+#     id: "com.sycryption.zerobrokerandroid"
+#     name: "ZeroBroker - Android"
+#   ios:
+#     id: "com.sycryption.zeroBrokerIos"
+#     name: "ZeroBroker - iOS"    
 
 
 flutter:

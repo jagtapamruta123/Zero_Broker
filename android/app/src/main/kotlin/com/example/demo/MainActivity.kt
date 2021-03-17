@@ -1,4 +1,4 @@
-package com.example.demo
+package com.sycryption.zero_broker
 
 import io.flutter.embedding.android.FlutterActivity
 
